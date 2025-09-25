@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Alzaki Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#">Ali Alzaki</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">🌓</button>
+  </header>
 
+  <main>
+    <section id="hero" class="hero">
+      <h1 class="tagline">Developer • Designer • Problem-solver</h1>
+      <p id="greeting" class="greeting">Hello!</p>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>About Me</h2>
+      <div class="about__content">
+        <img src="assets/images/my photo.jpg" alt="Profile photo" class="about__photo" />
+        <p>
+          I am a junior software engineering student at KFUPM, passionate in game developement and intersted on learning web development.
+          Building projects even the small ones is the key of learning.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/images/evaluation hub project.jpg" alt="Project 1 screenshot" />
+          <h3>Project One</h3>
+          <p>A project that allows students to evaluate the instructors in a more a interactive way to improve teaching quality by having at least one evaluation every month.</p>
+        </article>
+        <article class="card">
+          <img src="assets/images/student impact hub project.jpg" alt="Project 2 screenshot" />
+          <h3>Project Two</h3>
+          <p>A project that combines several activities in one platform to encourage and ease students envolvement in social events.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <form class="contact__form" id="contact-form" name="contact" autocomplete="on" novalidate>
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" placeholder="Say hello…" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> Ali Alzaki. Built with HTML, CSS, and JS.</small>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
