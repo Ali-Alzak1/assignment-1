@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const status = document.getElementById('form-status');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    status.textContent = 'Thanks! Your message has been sent successfully.';
+    status.textContent = 'Thanks! Your message has been “sent” (demo only).';
     form.reset();
   });
 });
