@@ -1,1 +1,19 @@
+# OS & editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node / tooling (if you later add tooling)
+node_modules/
+dist/
+build/
+coverage/
+.parcel-cache/
+.eslintcache
+
+# Env / deploy
+.env
+.vercel/
+.netlify/
 
