@@ -1,57 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ali Alzaki Portfolio</title>
+  <meta name="description" content="Ali Alzaki — game dev enthusiast & junior software engineer. Portfolio with projects and contact." />
+  <title>Ali Alzaki • Portfolio</title>
+
+  <!-- Fonts: clear body + expressive headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="bg-grid">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Top scroll progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
   <header class="site-header">
-    <a class="logo" href="#">Ali Alzaki</a>
+    <a class="logo" href="#hero" aria-label="Go to top">Ali Alzaki</a>
     <nav class="site-nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">🌓</button>
+    <!-- theme toggle removed by request -->
   </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <h1 class="tagline">Developer • Designer • Problem-solver</h1>
-      <p id="greeting" class="greeting">Hello!</p>
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" class="hero" data-animate>
+      <div class="hero__content">
+        <p class="eyebrow">Software Engineering • Game Dev • Web</p>
+        <h1 class="tagline">
+          Building <span class="accent-text">playful</span> & <span class="accent-text-2">thoughtful</span> experiences
+        </h1>
+        <p id="greeting" class="greeting">Hello!</p>
+
+        <div class="chips" aria-label="Interests">
+          <span class="chip">Game Dev</span>
+          <span class="chip">Web Dev</span>
+          <span class="chip">UI/UX</span>
+        </div>
+      </div>
+
+      <!-- small decorative stickers -->
+      <div class="hero__stickers" aria-hidden="true">
+        <span>🕹️</span>
+        <span>💻</span>
+        <span>🌱</span>
+        <span>⚙️</span>
+      </div>
     </section>
 
-    <section id="about" class="section about">
-      <h2>About Me</h2>
+    <!-- ABOUT -->
+    <section id="about" class="section about" data-animate>
+      <h2 class="section-title">About Me</h2>
       <div class="about__content">
-        <img src="assets/images/my photo.jpg" alt="Profile photo" class="about__photo" />
-        <p>
-          I am a junior software engineering student at KFUPM, passionate in game developement and intersted on learning web development.
-          Building projects even the small ones is the key of learning.
+        <figure class="about__figure">
+          <img
+            src="assets/images/my photo.jpg"
+            alt="Ali Alzaki"
+            class="about__photo"
+            loading="lazy"
+            width="96"
+            height="96"
+          />
+          <figcaption class="visually-hidden">Profile photo</figcaption>
+        </figure>
+        <p class="about__text">
+          I am a junior software engineering student at KFUPM, passionate about game development and interested in learning web development.
+          Building projects—even small ones—is the key to learning.
         </p>
       </div>
     </section>
 
-    <section id="projects" class="section projects">
-      <h2>Projects</h2>
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects" data-animate>
+      <h2 class="section-title">Projects</h2>
       <div class="grid">
-        <article class="card">
-          <img src="assets/images/evaluation hub project.jpg" alt="Project 1 screenshot" />
-          <h3>Project One</h3>
-          <p>A project that allows students to evaluate the instructors in a more a interactive way to improve teaching quality by having at least one evaluation every month.</p>
+        <!-- Card 1 -->
+        <article class="card" data-animate>
+          <div class="thumb-wrap">
+            <img
+              src="assets/images/evaluation hub project.jpg"
+              alt="Evaluation Hub preview"
+              class="thumb"
+              loading="lazy"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Evaluation Hub</h3>
+            <p class="card__text">
+              A project that allows students to evaluate instructors in a more interactive way to improve teaching quality—aiming for at least one evaluation every month.
+            </p>
+          </div>
         </article>
-        <article class="card">
-          <img src="assets/images/student impact hub project.jpg" alt="Project 2 screenshot" />
-          <h3>Project Two</h3>
-          <p>A project that combines several activities in one platform to encourage and ease students envolvement in social events.</p>
+
+        <!-- Card 2 -->
+        <article class="card" data-animate>
+          <div class="thumb-wrap">
+            <img
+              src="assets/images/student impact hub project.jpg"
+              alt="Student Impact Hub preview"
+              class="thumb"
+              loading="lazy"
+            />
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Student Impact Hub</h3>
+            <p class="card__text">
+              A platform that combines several activities to encourage and simplify student involvement in social events.
+            </p>
+          </div>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact" data-animate>
+      <h2 class="section-title">Contact</h2>
       <form class="contact__form" id="contact-form" name="contact" autocomplete="on" novalidate>
         <label>
           Name
@@ -65,7 +133,7 @@
           Message
           <textarea name="message" rows="5" placeholder="Say hello…" required></textarea>
         </label>
-        <button type="submit">Send</button>
+        <button type="submit" class="btn">Send</button>
         <p id="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
@@ -74,6 +142,28 @@
   <footer class="site-footer">
     <small>&copy; <span id="year"></span> Ali Alzaki. Built with HTML, CSS, and JS.</small>
   </footer>
+
+  <!-- Project modals -->
+  <dialog id="modal-evaluation" class="modal" aria-labelledby="modal-evaluation-title">
+    <div class="modal__window">
+      <button class="modal__close" aria-label="Close">✕</button>
+      <h3 id="modal-evaluation-title">Evaluation Hub — Details</h3>
+      <p>
+        Add your extended description here (goals, stack, timeline, your role). You can also attach a deck or link to your Figma file.
+      </p>
+      <div class="modal__links">
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="modal-impact" class="modal" aria-labelledby="modal-impact-title">
+    <div class="modal__window">
+      <button class="modal__close" aria-label="Close">✕</button>
+      <h3 id="modal-impact-title">Student Impact Hub — Details</h3>
+      <div class="modal__links">
+      </div>
+    </div>
+  </dialog>
 
   <script src="js/script.js" defer></script>
 </body>
